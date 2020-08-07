@@ -1,0 +1,386 @@
+<!DOCTYPE html><!-- The new doctype -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Editable Selectors</title>
+
+<!-- Internet Explorer HTML5 enabling code: -->
+
+<!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        
+        <style type="text/css">
+        .clear {
+          zoom: 1;
+          display: block;
+        }
+        </style>
+
+        
+        <![endif]-->
+
+<style type="text/css">
+* {
+	/* Universal reset: */
+	margin: 0;
+	padding: 0;
+}
+header, footer, article, section, hgroup, nav, figure { /* Giving a display value to the HTML5 rendered elements: */
+display: block; }
+body {
+	/* Setting the default text color, size, page background and a font stack: */
+	font-size: 0.825em;
+	color: #fcfcfc;
+	background-color: #355664;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Hyperlink Styles: */
+
+a, a:visited {
+	color: #0196e3;
+	text-decoration: none;
+	outline: none;
+}
+a:hover { text-decoration: underline; }
+a img { border: none; }
+/* Headings: */
+
+h1, h2, h3 {
+	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	text-shadow: 0 1px 1px black;
+}
+h1 {
+	/* The logo text */
+	font-size: 3.5em;
+	padding: 0.5em 0 0;
+	text-transform: uppercase;
+}
+h3 {
+	/* The slogan text */
+	font-family: forte, "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	font-size: 2em;
+	font-weight: normal;
+	margin: 0 0 1em;
+}
+h2 {
+	font-size: 2.2em;
+	font-weight: normal;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+}
+p {
+	line-height: 1.5em;
+	padding-bottom: 1em;
+}
+.line {
+	/* The dividing line: */
+	height: 1px;
+	background-color: #24404c;
+	border-bottom: 1px solid #416371;
+	margin: 1em 0;
+	overflow: hidden;
+}
+article .line {
+	/* The dividing line inside of the article is darker: */
+	background-color: #15242a;
+	border-bottom-color: #204656;
+	margin: 1.3em 0;
+}
+footer .line { margin: 2em 0; }
+nav {
+	background: url(img/gradient_light.jpg) repeat-x 50% 50% #f8f8f8;
+	padding: 0 5px;
+	position: absolute;
+	right: 0;
+	top: 4em;
+	border: 1px solid #FCFCFC;
+	-moz-box-shadow: 0 1px 1px #333333;
+	-webkit-box-shadow: 0 1px 1px #333333;
+	box-shadow: 0 1px 1px #333333;
+}
+/* The clearfix hack to clear the floats: */
+
+.clear:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* The navigation styling: */
+
+nav ul li { display: inline; }
+nav ul li a, nav ul li a:visited {
+	color: #565656;
+	display: block;
+	float: left;
+	font-size: 1.25em;
+	font-weight: bold;
+	margin: 5px 2px;
+	padding: 7px 10px 4px;
+	text-shadow: 0 1px 1px white;
+	text-transform: uppercase;
+}
+nav ul li a:hover {
+	text-decoration: none;
+	background-color: #f0f0f0;
+}
+nav, article, nav ul li a, figure {
+	/* Applying CSS3 rounded corners: */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+/* Article styles: */
+
+#page {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+article {
+	background-color: #213E4A;
+	margin: 3em 0;
+	padding: 20px;
+	text-shadow: 0 2px 0 black;
+}
+figure {
+	border: 3px solid #142830;
+	float: right;
+	height: 340px;
+	margin-left: 15px;
+	overflow: hidden;
+	width: 525px;
+	background-image: url(Img/ESH%20on%20top%20of%20element.png);
+	background-size: cover;
+}
+figure:hover {
+	-moz-box-shadow: 0 0 2px #4D7788;
+	-webkit-box-shadow: 0 0 2px #4D7788;
+	box-shadow: 0 0 2px #4D7788;
+}
+figure img { margin-left: -60px; }
+/* Footer styling: */
+
+footer {
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 0.825em;
+}
+footer p {
+	margin-bottom: -2.5em;
+	position: relative;
+}
+footer a, footer a:visited {
+	color: #cccccc;
+	background-color: #213e4a;
+	display: block;
+	padding: 2px 4px;
+	z-index: 100;
+	position: relative;
+}
+footer a:hover {
+	text-decoration: none;
+	background-color: #142830;
+}
+footer a.by { float: left; }
+footer a.up { float: right; }
+#articles  ul li {
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+#articles ul ul li { margin-left: 80px; }
+#codehints { background-image: url(Img/ESH%20codehints.png); }
+#sync {
+	background-image: url(Img/sync.png);
+	background-size: contain;
+}
+		#lightbox {
+			position:fixed; /* keeps the lightbox window in the current viewport */
+			top:0; 
+			left:0; 
+			width:100%; 
+			height:100%; 
+			background:url(overlay.png) repeat; 
+			text-align:center;
+		}
+		#lightbox p {
+			text-align:right; 
+			color:#fff; 
+			margin-right:20px; 
+			font-size:12px; 
+		}
+		#lightbox img {
+	box-shadow: 0 0 25px #111;
+	-webkit-box-shadow: 0 0 25px #111;
+	-moz-box-shadow: 0 0 25px #111;
+	max-width: 940px;
+	width: 100%;
+		}
+</style>
+</head>
+
+<body>
+<section id="page"> <!-- Defining the #page section with the section tag -->
+  
+  <header> <!-- Defining the header section of the page with the appropriate tag -->
+    
+    <hgroup>
+      <h1>Editable Selectors</h1>
+    </hgroup>
+    <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
+      <ul>
+        <li><a href="#article1">The HUD</a></li>
+        <li><a href="#article2">Add Classes/IDs</a></li>
+        <li><a href="#article3">Others</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="articles"> <!-- A new section with the articles --> 
+    
+    <!-- Article 1 start -->
+    
+    <div class="line"></div>
+    <!-- Dividing line -->
+    
+    <article id="article1"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
+      <h2>The HUD<br>
+      </h2>
+      <div class="line"></div>
+      <div class="articleBody clear">
+        <figure id="theHUD" class="lightbox_trigger" href="Img/ESH%20on%20top%20of%20element.png"> 
+          
+        </figure>
+        <p>Click on any element in the Live Design Surface will bring up the element HUD </p>
+        <p>The HUd will have the following</p>
+        <ul>
+        <li>The Tag Name</li>
+        <li>The classes and IDs in case any&nbsp;</li>
+        <li>Option to add more clasees /ID</li>
+        </ul>
+        <p>On selecting multiple elements the HUD will auto update just like the Tag selector does - i.e. Draw a HUD on top of the parent element&nbsp;</p>
+      </div>
+    </article>
+    
+    <!-- Article 1 end --> 
+    
+    <!-- Article 2 start -->
+    
+    <div class="line"></div>
+    <article id="article2">
+      <h2>Classes and IDs</h2>
+      <div class="line"></div>
+      <div class="articleBody clear">
+        <figure id="codehints" class="lightbox_trigger" href="Img/ESH%20codehints.png"></figure>
+        <p>Clicking on the + icon will let one add classes and IDs into the HTML</p>
+        <p>Apart from adding classes and IDs 
+        </p>
+        <ul>
+        <li>Hinting for classes and IDs</li>
+        	<ul>
+            <li>. for list of all classes</li>
+            <li># for list of all IDs</li>
+            <li>Classes added by default </li>
+            </ul>
+        <li>Add multiple classes</li>
+        <li>Classes are added by default unless user specifies an #</li>
+        </ul>
+      </div>
+    </article>
+    
+    <!-- Article 2 end --> 
+    
+    <!-- Article 3 start -->
+    
+    <div class="line"></div>
+    <article id="article3">
+      <h2>Other Features&nbsp;</h2>
+      <div class="line"></div>
+      <div class="articleBody clear">
+        <figure id="sync" class="lightbox_trigger" href="Img/sync.png"></figure>
+        <p>Apart from the obvious features the Editable Selectors HUD also&nbsp;</p>
+        <ul>
+        <li>Maintained in Sync with all Live tools</li>
+        <li>Works seemlessly with CSS Designer</li>
+        <li>Supports Live UNdo and Redo ops </li></ul>
+      </div>
+    </article>
+    
+    <!-- Article 3 end --> 
+    
+  </section>
+
+
+        <footer> <!-- Marking the footer section -->
+
+           <div class="line"></div>
+           
+           <p></p> <!-- Change the copyright notice -->
+           
+           <a href="#" class="up">Go UP</a>
+           <a href="#" class="by">Editable Selectors</a>
+           
+
+        </footer>
+            
+		</section> <!-- Closing the #page section -->
+        
+        <!-- JavaScript Includes -->
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="jquery.scrollTo-1.4.2/jquery.scrollTo-min.js"></script>
+        <script src="script.js"></script>
+        <script>
+jQuery(document).ready(function($) {
+	
+	$('.lightbox_trigger').click(function(e) {
+		
+		//prevent default action (hyperlink)
+		e.preventDefault();
+		
+		//Get clicked link href
+		var image_href = $(this).attr("href");
+		
+		/* 	
+		If the lightbox window HTML already exists in document, 
+		change the img src to to match the href of whatever link was clicked
+		
+		If the lightbox window HTML doesn't exists, create it and insert it.
+		(This will only happen the first time around)
+		*/
+		
+		if ($('#lightbox').length > 0) { // #lightbox exists
+			
+			//place href as img src value
+			$('#content').html('<img src="' + image_href +'" />');
+		   	
+			//show lightbox window - you could use .show('fast') for a transition
+			$('#lightbox').show();
+		}
+		
+		else { //#lightbox does not exist - create and insert (runs 1st time only)
+			
+			//create HTML markup for lightbox window
+			var lightbox = 
+			'<div id="lightbox">' +
+				'<p>Click to close</p>' +
+				'<div id="content">' + //insert clicked link's href into img src
+					'<img src="' + image_href +'" />' +
+				'</div>' +	
+			'</div>';
+				
+			//insert lightbox HTML into page
+			$('body').append(lightbox);
+		}
+		
+	});
+	
+	//Click anywhere on the page to get rid of lightbox window
+	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+		$('#lightbox').hide();
+	});
+
+});
+</script>
+    </body>
+</html>

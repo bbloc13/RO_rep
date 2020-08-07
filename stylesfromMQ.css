@@ -1,0 +1,15 @@
+@charset "utf-8";
+.newclass{}
+#newID{}
+#newIDwithaclass .newclassfromID {}
+.newclasswithID #newIDfromclass{}
+
+@media screen and (max-width:360px){
+.newclassinMQ{}
+#newIDinMQ{}
+.newclassinMQwithID #newIDinMQfromclass{}
+#newIDinMQwithaclass .newclassinMQfromID {}
+}
+
+#newIDwithaclass .newclassfromID {}
+.newclasswithID #newIDfromclass{}

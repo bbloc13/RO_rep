@@ -1,0 +1,250 @@
+Editable Selectors : Long selectors name should expand on click
+
+Open the longselectors.html
+Click on the Div - Editable selector HUd comes up with blue border around the element showig the tag and the class defined in it 
+Notice that the long class name would be truncated 
+Click on the selector name in the HUD - The HUD should expand to show the whole name 
+Repeat the steps on all such divs ion the page
+Check for this behavior in other files - This behavior must be the same in real world files 
+
+
+
+Editable Selectors : If the identifiers width is greater than a certain width - the identifiers should get stacked on top of each other 
+
+Open the Multiple Identifiers file
+Click on the first box - The element Identifiers would all be in one line
+Click on the other boxes in page -Confirm that the element Identifiers spawn multiple line  
+Check for this behavior in other files - This behavior must be the same in real world files 
+
+
+
+Editable Selectors :Adding new classes/ids must add it to the code correctly - no multiple class="" class="" attributes in the tag
+
+Open the Addmultipleclasses file
+Click on the first text block - Verify that it has red and bold classes applied on it
+Click on the next text block 
+Click +from the Editable Selector HUD 
+Type "r" - verify that red comes up in code hints. 
+Press Enter and commit it - Verify code to be <p class="red">
+Clcik + again 
+Type b and commit the bold class as done earlier - VErify code to be <p class="red bold">
+Click on the next code block 
+TYpe r , Select r - Verify that the cursor still remains in the  text field 
+Type b and select bold from codehints and commit it -  VErify code to be <p class="red bold">
+
+
+
+Editable Selectors : Check for all entry points
+
+ 1.	Click on live view should display the tag identifiers
+ 2.	Click on any tag in DOM visualizer should display the tag identifiers
+ 3.	Click on tag in tag selector should display the tag identifiers
+ 4.	When a block of code is selected in Code View the tag identifiers must be displayed
+ 5.	On inspect on hover - no tag identifiers are to be displayed unless an element is locked upon
+
+Open the index.html page from RS4 Clean 
+Click on Live View
+Click on the huge text in the Design Surface - The Editable Selectors HUD must come up with the h1 tag
+Clcik on DOM Tool </> in the bottom left of the Screen just below the Code VIew
+Click on the h1 tags parent tag <figcaption> - The Editable Selectors HUD would be redrawn over it in the Design Surface and show the tag as figcaption 
+Click on the section#shout.clear tag in teh Tag selector - The Editable Selectors HUD would be redrawn over it and show the section tag with the id #shout and class .clear
+Click on INspect button in the Document toolbar 
+Hover over the elements in the page - Verify that Editable Selector HUd doesn't come up
+Click on the Huge title -   The Editable Selectors HUD must come up with the h1 tag
+Verify the steps in other pages - This behavior must be the same in real world files 
+
+
+
+
+Editable Selectors : 	Tag identifiers must map correctly to the tag and its identifiers as specified in the html
+
+Open the index.html page from RS4 Clean 
+Click on Live View
+Click on the huge text in the Design Surface - The Editable Selectors HUD must come up with the h1 tag- Verify that the TAg Selector also shows up the same tag h1 
+Click on the text block below the huge title - he Editable Selectors HUD must come up with the p tag- Verify that the TAg Selector also shows up the same tag p
+Verify the same for other elements in the page
+Verify the steps in other pages - This behavior must be the same in real world files  
+
+
+
+Editable Selectors : Add/Delete of the tag identifiers must add/delete the identifiers from the same element only 
+
+Open editidentifiers file
+Switch to Live VIew
+Click on the first block of text 
+Click on + in the Hud and add the .red class - Verify that only that block turns red
+Click on the second block of text 
+Click on + in the Hud and add the #blue ID - Verify that only that block turns blue
+Click on the third block of text 
+Click on X in the Hud for the #green ID  - Verify that only that block turns black
+Click on the last block of text 
+Click on X in the Hud for the .red class - Verify that only that block turns black
+
+
+
+
+Editable Selectors : Selecting Multiple Tags will update the HUD
+
+Open the Select MUltiple tags file
+Switch to LIve View
+Click on the green text blocks one by one - Verify that they show their individual tags - h3 and article   
+Click and drag to highlight both the green color text blocks - Verify that the HUD shows div with .smallercontainer class
+Click on the red text blocks one by one - Verify that they show their individual tags - h3 and article   
+Click and drag to highlight both the red color text blocks - Verify that the HUD shows section tag 
+Click and drag to highlight both the red and green color text blocks - Verify that the HUD shows section tag 
+Verify the steps in other pages - This behavior must be the same in real world files 
+
+
+
+Editable Selectors : Hud to always be visible 
+
+Open the fixedelements page
+Clickon the text over the red box - MAke sure the <p> HUd comes up
+Click on the clipped text in the grey box - MAke sure the <p>HUD comes up over the red box 
+Verify the steps in other pages - This behavior must be the same in real world files 
+
+
+
+Editable Selectors to work seemlessly with CSSDesigner panel 
+
+Open Rs4 clean INdex.html
+Switch to Live VIew in Design VIew - 
+Make sure the CSSD panel is open
+Click on the Huge Title text - Verify the <h1> HUD comes up
+From the CSS Designer panel change the color to say red - Verify that the <h1> HUD stays  in view
+Click on the text below the Huge Title - Verify the <p> HUD comes up
+Add the .bold class from teh <p> HUD - Verify if the text turns bold and the HUd stays in view
+Grab the vertical scrollbars and scroll up and down the page - Verify if the <p> HUD stays on top  of the Text below the huge title  
+
+
+
+Editable Selectors to come up on all pages 
+
+Open index.html from circular navigation 
+Switch to Live View
+Click on the Circular navigation title - Verify if the <h1> HUD comes up
+Click on the text below the titlr - Verify if the <span> HUD comes up
+Clcik on the text blocks in the page -Verify if the  <p> Huds come up
+Click on <section> in the TAg selector - Verify if the <section> HUD comes up
+Clcik on </> in the tag Selector and choose any <p> tag- Verify if the  <p> Huds come up
+
+
+
+Editable Selectors , DOM Tool , tag Selector , CSSDesigner should be in sync in Live Code 
+
+Open RS$ clean index.html
+Switch to Live View
+Click on teh Huge title 
+	Verify 
+	1. <h1> HUD should come up
+	2. Last Tag in Tag Selector should show be h1
+	3. CSSD Should show computed styles for h1 - Click on the Selector just below teh "Computed" label in CSSD should highlight the selected element 
+Repeat the steps for other elements in the page
+	Verify 
+	1. HUD comes up with tag and associated class and IDs 
+	2. Last element in TAg selector should be the same one
+	3. Click on the topmost selector in CSSD should highlight the selected element	 
+
+
+
+Editable Selectors: Codehints should show all the classes and IDs in the css 
+
+Open the StylesfromMQ file
+Click on the text element - Verify if the <p> HUD comes up
+Click on the + icon from the <p> HUD
+Type . - Verify if all 6 classses defined in the CSS come up
+TYpe # - Verify if all 6 IDs defined in the CSS come up 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Editable Selectors  : Add multiple classes / replace IDs
+
+Open the Addmultipleclasses.html file
+Switch to Live View
+Click on the second block of text "Add classes to this text" - verify if the <p>HUD comes up
+Click on + in teh <p> HUD and type . - Verify if .bold and .red classes are displayed 
+Choose bold ,press space and type r - Verify if code hints come up - 
+Choose .red class  - Verify code to be <p class="bol red">Add classes to this text</p> 
+Click on + on the same block of text
+Type # - Verify #decoration and #italic IDs show up in Code hints
+Choose # decoration - Verify code to be <p class="bol red" id="decoration">Add classes to this text</p>
+Click on the next block of text , Click on the + icon on the <p> HUD 
+Type # - Verify that code hints show up only the #italic ID
+Click on the other block where the ID was added - Verify HUD shows up .bold .red and #decoration 
+Click on + and type # - Choose #italic : Verify code to be <p class="bol red" id="italic">Add classes to this text</p> 
+ 
+ 
+Editable Selectors : Adding/Deleting classes reflects the change in tag Selector
+
+Open the Addmultipleclasses.html file
+Switch to Live View
+Click on the second block of text "Add classes to this text" - verify if the <p>HUD comes up
+Click on + in teh <p> HUD and type . - Verify if .bold and .red classes are displayed 
+Choose bold - Verify if tag selector Displays p.bold
+Hover over the .bold class on the <p>HUD and delete it- Verify if  tag selector too reflects the change 
+ 
+
+Editable Selectors : On add/Delete the classes CSS Styles should get recomputed 
+
+pen the Addmultipleclasses.html file
+Switch to Live View
+Click on the Red text - Verify if teh CSS Designer shows .bold and .red classes
+Click on + in the <p> HUD and Add #Italic ID  
+CSS Designer should show the #italic ID in its 	Selectors pane
+Delete the #italic ID from the Editable Selectors HUD
+CSS Designer should not show the #italic ID in its Selectors pane
+
+
+Editable Selectors : ESH and Tag Selector should be in sync on clicking in balnk spaces 
+
+Open the RS4 clean index.html
+Click on the text just below the Huge Title : Verify if both thetag selector and the Editable Selectors HUd show the <p> Tag
+Click just outside of the blue Editable Selectors box - Verify if both the tag selector and ESh still are in sync
+Check for other blank spaces in te file -Verify if both the tag selector and ESh still are in sync
+ 
+
+Editable Selectors : ESH to Dynamically spawn the elements when the element is styled by CSSD 
+
+Open the RS4 clean index.html file
+Switch to Live View - Click on the HUge title
+IN CSS Designer , Go To computed and change the font Size 
+Pres CTRL/CMD and drag the font size to change the font size in LIve vIew
+Check whether the ESH HUD too updates along with the element
+Verify nthe same on other elements in the page 
+
+
+Editable Selectors : ESH not to be affected by User CSS
+
+Open the index.html page from the Feature Example Folder
+Switch to Live View
+Click on any tag and try to add a class 
+Verify if the Typed text comes up in black 
+Add a particular class and check if it is not italicised 
+In CSSD - Select the body selector and add Font-style:italic property
+Verify if the class that was earlier is not italicised 
+
+
+Editable Selctors : Code hints to be truncated appropriately 
+  
+Open the longselectors.html
+Click on the Div - Editable selector HUd comes up with blue border around the element showing the tag and the class defined in it 
+Notice that the long class name would be truncated 
+Clcik on the + icon in the <div> HUD
+Type a - Code hints should appear and show a class and an ID truncated inicating that the mname is longer than the width of the code hints window 
+
+
+
+ 
+
+
+
